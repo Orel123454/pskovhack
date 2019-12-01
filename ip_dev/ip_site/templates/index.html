@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | Triangle</title>
+    <link href=" {% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet"> 
+    <link href="{% static 'css/lightbox.css' %}" rel="stylesheet"> 
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'images/ico/apple-touch-icon-144-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images/ico/apple-touch-icon-114-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images/ico/apple-touch-icon-72-precomposed.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-precomposed.png' %}">
+</head><!--/head-->
+
+<body>
+	<header id="header">      
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 overflow">
+                   <div class="social-icons pull-right">
+
+                    </div> 
+                </div>
+             </div>
+        </div>
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html">
+                    	<h1><img src="{% static 'images/logo.png' %}" alt="logo" height="200" width="200"></h1>
+                    </a>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="index.html">Домашняя</a></li>
+                        <li class="dropdown"><a href="provider.html">Поставщик</a></li>                    
+                        <li class="dropdown"><a href="#"> Предприниматель</a></li>
+                        <li class="dropdown"><a href="#"> Грузоперевозки</a></li>                        
+
+                        <!-- КНОПКА ВХОДА -->
+                        <li class="dropdown"><center><button onclick="show('block')" class="regButton">Вход</button></center>
+            <!--Задний прозрачный фон -->
+                        <div onclick="show('block')" id="gray"></div>
+                        <div id="registration_window">
+                            <img onclick="show('none')" class="close_registration" src="{% static 'images/close_registration.png' %}" alt="">
+                            <div class="registration_form">
+
+                                <form action="vxod" class="user_form" name="f1" method="POST">
+                                    <h1 class="form_title"> Вход</h1>
+
+                                    <div class="form_group">
+                                        <input  class="form_input" placeholder=" " name="lg">
+                                        <label  class="form_label">Логин</label>
+                                    </div>
+
+                                    <div class="form_group">
+                                        <input class="form_input"  placeholder=" " name="ps">
+                                        <label class="form_label">Пароль</label>
+                                    </div>
+                                    
+                                    <button class="form_button">Войти</button>  
+
+                                    <button class="form_button" onclick="windows.open("{% url 'auth' %}")">Регистрация </a></button>
+                                    
+                    </form>
+                </div>
+            </div>
+            </li>
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <section id="home-slider">
+        <div class="container">
+            <div class="row">
+                <div class="main-slider">
+                    <div class="slide-text">
+                        <h1>О нас</h1>
+                        <p>Данный сайт предназначен для наиболее систематизированного взаимодействия всех участников предпринимательства. В начале, чаще всего, проблемы возникают со спросом. На нашем сервисе вы сможете найти пути сбыта или получить предложение о сотрудничестве.</p>
+                    </div>
+                    <img src="{% static 'images/home/slider/hill.png' %}" class="slider-hill" alt="slider image">
+                    <img src="{% static 'images/home/slider/house.png' %}" class="slider-house" alt="slider image">
+                    <img src="{% static 'images/home/slider/sun.png' %}" class="slider-sun" alt="slider image">
+                    <img src="{% static 'images/home/slider/birds1.png' %}" class="slider-birds1" alt="slider image">
+                    <img src="{% static 'images/home/slider/birds2.png' %}" class="slider-birds2" alt="slider image">
+                </div>
+            </div>
+        </div>
+        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+    </section>
+    <!--/#home-slider-->
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="body_circular_menu">
+                <div class="circular-menu">
+                    
+                    <a href="#" class="circular-menu-item">Предприниматель</a>
+                    <a href="#" class="circular-menu-item">Грузоперевозки</a>
+                    <a href="#" class="circular-menu-item">Поставщик</a>
+                    <a href="#" class="circular-menu-button">
+                        <span class="circular-menu-lines"></span>
+                    </a>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+    <!--/#services-->
+
+    <!--/#action-->
+
+
+     <!--/#features-->
+
+    
+    <!--/#clients-->
+
+    {{footer}}
+    <!--/#footer-->
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lightbox.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>   
+</body>
+</html>
